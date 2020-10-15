@@ -8,4 +8,12 @@
     this.phrases = ["A Piece of Cake", "Roll With the Punches", "Break The Ice", "Close But No Cigar", "You Can't Judge a Book By Its Cover"];
     this.activePhrase = null;
   }
+  getRandomPhrase() {
+  const randomNumber = Math.floor(Math.random() * 5);
+  return this.phrases[randomNumber];
+  }
+  startGame() {
+    const startScreen = document.getElementById("overlay");
+    startScreen.style.display = "none";
+  }
 }
