@@ -12,4 +12,8 @@
   const randomNumber = Math.floor(Math.random() * 5);
   return this.phrases[randomNumber];
   }
+  startGame() {
+    const startScreen = document.getElementById("overlay");
+    startScreen.style.display = "none";
+  }
 }
