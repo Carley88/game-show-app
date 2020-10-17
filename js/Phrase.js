@@ -24,4 +24,10 @@
   checkLetter(selectedLetter) {
     return this.phrase.includes(selectedLetter);
   }
+  showMatchedLetter(selectedLetter) {
+    const letters = document.getElementsByClassName(selectedLetter);
+    for(let i = 0; i < letters.length; i++) {
+      letters[i].classList.replace("hide", "show");
+    }
+  }
 }
