@@ -4,7 +4,7 @@
 
  class Phrase {
    constructor(phrase) {
-     this.phrase = phrase;
+     this.phrase = phrase.toLowerCase();
    }
    addPhraseToDisplay() {
      const ul = document.querySelector('[id=phrase] ul');
@@ -21,5 +21,15 @@
       }
     }
   }
-
- }
+  checkLetter(selectedLetter) {
+    if (this.phrase.includes(selectedLetter) === true) {
+      for(let i = 0; i < this.phrase.length; i++) {
+        if(this.phrase[i] === selectedLetter) {
+          return this.phrase[i];
+        }
+      }
+    } else {
+      return false
+    }
+  }
+}
