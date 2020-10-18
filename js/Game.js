@@ -16,4 +16,9 @@
     const startScreen = document.getElementById("overlay");
     startScreen.style.display = "none";
   }
+  removeLife() {
+    const hearts = document.getElementsByClassName("tries");
+    hearts[this.missed].children[0].src = `images/lostHeart.png`;
+    this.missed++
+  }
 }
