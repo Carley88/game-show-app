@@ -21,4 +21,12 @@
     hearts[this.missed].children[0].src = `images/lostHeart.png`;
     this.missed++
   }
+  checkForWin() {
+    const remainingLetters = document.getElementsByClassName("hide");
+    if(remainingLetters.length === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
