@@ -29,4 +29,18 @@
       return false;
     }
   }
+  gameOver(gameWon) {
+    const endScreen = document.getElementById("overlay");
+    const endMessage = document.getElementById("game-over-message");
+    const playButton = document.getElementById("btn__reset");
+    if(gameWon === true) {
+      endScreen.className = "win"
+      endMessage.textContent = "Congratulations you've won the game!"
+      playButton.textContent = "Play again"
+    } else {
+      endScreen.className = "lose"
+      endMessage.textContent = "Oh no you've run out of guesses!"
+      playButton.textContent = 'Try again'
+    }
+  }
 }
