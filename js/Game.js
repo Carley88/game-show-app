@@ -44,6 +44,7 @@
     const endScreen = document.getElementById("overlay");
     const endMessage = document.getElementById("game-over-message");
     const playButton = document.getElementById("btn__reset");
+    endScreen.style.display = "";
     if(gameWon === true) {
       endScreen.className = "win"
       endMessage.textContent = "Congratulations you've won the game!"
