@@ -24,9 +24,13 @@
     this.activePhrase.addPhraseToDisplay();
   }
   removeLife() {
-    const hearts = document.getElementsByClassName("tries");
-    hearts[this.missed].children[0].src = `images/lostHeart.png`;
-    this.missed++
+    if(this.missed < 4) {
+      const hearts = document.getElementsByClassName("tries");
+      hearts[this.missed].children[0].src = `images/lostHeart.png`;
+      this.missed++;
+    } else {
+      this.gameOver();
+    }
   }
   checkForWin() {
     const remainingLetters = document.getElementsByClassName("hide");
