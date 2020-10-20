@@ -24,9 +24,13 @@
     this.activePhrase.addPhraseToDisplay();
   }
   removeLife() {
-    const hearts = document.getElementsByClassName("tries");
-    hearts[this.missed].children[0].src = `images/lostHeart.png`;
-    this.missed++
+    if(this.missed < 4) {
+      const hearts = document.getElementsByClassName("tries");
+      hearts[this.missed].children[0].src = `images/lostHeart.png`;
+      this.missed++;
+    } else {
+      this.gameOver();
+    }
   }
   checkForWin() {
     const remainingLetters = document.getElementsByClassName("hide");
@@ -40,6 +44,7 @@
     const endScreen = document.getElementById("overlay");
     const endMessage = document.getElementById("game-over-message");
     const playButton = document.getElementById("btn__reset");
+    endScreen.style.display = "";
     if(gameWon === true) {
       endScreen.className = "win"
       endMessage.textContent = "Congratulations you've won the game!"
@@ -48,6 +53,19 @@
       endScreen.className = "lose"
       endMessage.textContent = "Oh no you've run out of guesses!"
       playButton.textContent = 'Try again'
+    }
+  }
+  handleInteraction(button) {
+    button.disabled = true;
+    if(this.activePhrase.checkLetter(button.textContent) === false) {
+      button.className = "wrong";
+      this.removeLife();
+    } else {
+      button.className = "chosen";
+      this.activePhrase.showMatchedLetter(button.textContent);
+      if (this.checkForWin() === true) {
+        this.gameOver(true);
+      }
     }
   }
 }
