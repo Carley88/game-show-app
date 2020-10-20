@@ -5,12 +5,17 @@
  class Game {
   constructor(missed, phrases, activePhrase) {
     this.missed = 0;
-    this.phrases = ["A Piece of Cake", "Roll With the Punches", "Break The Ice", "Close But No Cigar", "You Can't Judge a Book By Its Cover"];
+    this.phrases = [new Phrase("A Piece of Cake"),
+                    new Phrase("Roll With the Punches"),
+                    new Phrase("Break The Ice"),
+                    new Phrase("Close But No Cigar"),
+                    new Phrase("You Can't Judge a Book By Its Cover")
+                  ];
     this.activePhrase = null;
   }
   getRandomPhrase() {
   const randomNumber = Math.floor(Math.random() * 5);
-  return this.phrases[randomNumber];
+  return this.phrases[randomNumber].phrase;
   }
   startGame() {
     const startScreen = document.getElementById("overlay");
