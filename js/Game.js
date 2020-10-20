@@ -16,4 +16,31 @@
     const startScreen = document.getElementById("overlay");
     startScreen.style.display = "none";
   }
+  removeLife() {
+    const hearts = document.getElementsByClassName("tries");
+    hearts[this.missed].children[0].src = `images/lostHeart.png`;
+    this.missed++
+  }
+  checkForWin() {
+    const remainingLetters = document.getElementsByClassName("hide");
+    if(remainingLetters.length === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  gameOver(gameWon) {
+    const endScreen = document.getElementById("overlay");
+    const endMessage = document.getElementById("game-over-message");
+    const playButton = document.getElementById("btn__reset");
+    if(gameWon === true) {
+      endScreen.className = "win"
+      endMessage.textContent = "Congratulations you've won the game!"
+      playButton.textContent = "Play again"
+    } else {
+      endScreen.className = "lose"
+      endMessage.textContent = "Oh no you've run out of guesses!"
+      playButton.textContent = 'Try again'
+    }
+  }
 }

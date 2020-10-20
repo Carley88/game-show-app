@@ -4,7 +4,7 @@
 
  class Phrase {
    constructor(phrase) {
-     this.phrase = phrase;
+     this.phrase = phrase.toLowerCase();
    }
    addPhraseToDisplay() {
      const ul = document.querySelector('[id=phrase] ul');
@@ -21,5 +21,13 @@
       }
     }
   }
-
- }
+  checkLetter(selectedLetter) {
+    return this.phrase.includes(selectedLetter);
+  }
+  showMatchedLetter(selectedLetter) {
+    const letters = document.getElementsByClassName(selectedLetter);
+    for(let i = 0; i < letters.length; i++) {
+      letters[i].classList.replace("hide", "show");
+    }
+  }
+}
