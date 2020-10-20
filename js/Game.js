@@ -54,4 +54,17 @@
       playButton.textContent = 'Try again'
     }
   }
+  handleInteraction(button) {
+    button.disabled = true;
+    if(this.activePhrase.checkLetter(button.textContent) === false) {
+      button.className = "wrong";
+      this.removeLife();
+    } else {
+      button.className = "chosen";
+      this.activePhrase.showMatchedLetter(button.textContent);
+      if (this.checkForWin() === true) {
+        this.gameOver(true);
+      }
+    }
+  }
 }
