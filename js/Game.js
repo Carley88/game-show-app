@@ -9,7 +9,7 @@
                     new Phrase("Roll With the Punches"),
                     new Phrase("Break The Ice"),
                     new Phrase("Close But No Cigar"),
-                    new Phrase("You Can't Judge a Book By Its Cover")
+                    new Phrase("Every Cloud Has a Silver Lining")
                   ];
     this.activePhrase = null;
   }
@@ -46,13 +46,13 @@
     const playButton = document.getElementById("btn__reset");
     endScreen.style.display = "";
     if(gameWon === true) {
-      endScreen.className = "win"
-      endMessage.textContent = "Congratulations you've won the game!"
-      playButton.textContent = "Play again"
+      endScreen.className = "win";
+      endMessage.textContent = "Congratulations you've won the game!";
+      playButton.textContent = "Play again";
     } else {
-      endScreen.className = "lose"
-      endMessage.textContent = "Oh no you've run out of guesses!"
-      playButton.textContent = 'Try again'
+      endScreen.className = "lose";
+      endMessage.textContent = "Oh no you've run out of guesses!";
+      playButton.textContent = 'Try again';
     }
   }
   handleInteraction(button) {
