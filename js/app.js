@@ -16,3 +16,14 @@ letters.addEventListener("click", (event) => {
     newGame.handleInteraction(event.target);
   }
 });
+
+  document.addEventListener("keydown", (event) => {
+    if(newGame.activePhrase) {
+      const buttons = document.querySelectorAll(`.key`)
+      buttons.forEach(button => {
+        if(event.key == button.textContent) {
+          newGame.handleInteraction(button);
+        }
+    });
+  }
+});
