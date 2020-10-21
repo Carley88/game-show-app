@@ -62,6 +62,7 @@
     while (ul.firstChild) {
       ul.removeChild(ul.firstChild);
     }
+    this.activePhrase = null;
     const buttons = document.querySelectorAll(".keyrow button");
     buttons.forEach(button => {
         button.disabled = false;
