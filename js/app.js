@@ -3,12 +3,16 @@
  * app.js */
 
 const newGame = new Game();
-newGame.activePhrase = newGame.getRandomPhrase();
-
-const newPhrase = new Phrase(newGame.activePhrase);
-newPhrase.addPhraseToDisplay();
 
 const startButton = document.getElementById("btn__reset");
 startButton.addEventListener("click", () => {
   newGame.startGame();
+  console.log(newGame.activePhrase.phrase);
+});
+
+const letters = document.getElementById("qwerty");
+letters.addEventListener("click", (event) => {
+  if (event.target.className === "key") {
+    newGame.handleInteraction(event.target);
+  }
 });
