@@ -49,11 +49,27 @@
       endScreen.className = "win";
       endMessage.textContent = "Congratulations you've won the game!";
       playButton.textContent = "Play again";
+      this.resetGame();
     } else {
       endScreen.className = "lose";
       endMessage.textContent = "Oh no you've run out of guesses!";
       playButton.textContent = 'Try again';
+      this.resetGame();
     }
+  }
+  resetGame() {
+    const ul = document.querySelector('[id=phrase] ul');
+    while (ul.firstChild) {
+      ul.removeChild(ul.firstChild);
+    }
+    const buttons = document.querySelectorAll(".keyrow button");
+    buttons.forEach(button => {
+        button.disabled = false;
+        button.className = "key";
+    });
+    const hearts = document.querySelectorAll(".tries");
+    this.missed = 0;
+    hearts.forEach(heart => heart.children[0].src = "images/liveHeart.png");
   }
   handleInteraction(button) {
     button.disabled = true;
