@@ -17,13 +17,13 @@ letters.addEventListener("click", (event) => {
   }
 });
 
-  document.addEventListener("keydown", (event) => {
-    if(newGame.activePhrase) {
-      const buttons = document.querySelectorAll(`.key`)
-      buttons.forEach(button => {
-        if(event.key == button.textContent) {
-          newGame.handleInteraction(button);
-        }
+document.addEventListener("keydown", (event) => {
+  if(newGame.activePhrase) {
+    const buttons = document.querySelectorAll(`.key`)
+    buttons.forEach(button => {
+      if(event.key == button.textContent) {
+        newGame.handleInteraction(button);
+      }
     });
   }
 });
