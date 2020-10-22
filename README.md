@@ -1,6 +1,8 @@
 # game-show-app
 Unit 4 project for the Tech Degree
 
+A fun guess the phrase game. The user has to guess letters within the phrase if they guess correctly the letter is revealed but if they guess incorrectly then they will loose a heart!
+
 Updates to the styles.css:
 -Start screen background to Cyber Grape #58427C
 -Game screen background to Baby Blue #89CFF0
