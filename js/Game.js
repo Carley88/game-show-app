@@ -2,7 +2,7 @@
  * Project 4 - OOP Game App
  * Game.js */
 
- class Game {
+class Game {
   constructor(missed, phrases, activePhrase) {
     this.missed = 0;
     this.phrases = [new Phrase("A Piece of Cake"),
