@@ -3,7 +3,7 @@
  * Game.js */
 
 class Game {
-  constructor(missed, phrases, activePhrase) {
+  constructor(phrases) {
     this.missed = 0;
     this.phrases = [new Phrase("A Piece of Cake"),
                     new Phrase("Roll With the Punches"),
@@ -18,7 +18,7 @@ Random phrase picks an item from the phrases array at random by selecting
 a random number between 0 and 4.
 **/
   getRandomPhrase() {
-  const randomNumber = Math.floor(Math.random() * 5);
+  const randomNumber = Math.floor(Math.random() * this.phrases.length);
   return this.phrases[randomNumber];
   }
 /**
@@ -71,7 +71,7 @@ a you've run out of guesses message & will update the start button to say "try a
     const endMessage = document.getElementById("game-over-message");
     const playButton = document.getElementById("btn__reset");
     endScreen.style.display = "";
-    if(gameWon === true) {
+    if(gameWon) {
       endScreen.className = "win";
       endMessage.textContent = "Congratulations you've won the game!";
       playButton.textContent = "Play again";
