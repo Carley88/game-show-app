@@ -7,7 +7,6 @@ const newGame = new Game();
 const startButton = document.getElementById("btn__reset");
 startButton.addEventListener("click", () => {
   newGame.startGame();
-  console.log(newGame.activePhrase.phrase);
 });
 
 const letters = document.getElementById("qwerty");
