@@ -2,14 +2,14 @@
  * Project 4 - OOP Game App
  * app.js */
 
-const newGame = new Game();
-
+let newGame;
 /**
 When a user clicks the start button the start game method is called.
 This will move the user to the main screen to begin guessing the phrase.
 **/
 const startButton = document.getElementById("btn__reset");
 startButton.addEventListener("click", () => {
+  newGame = new Game();
   newGame.startGame();
 });
 
